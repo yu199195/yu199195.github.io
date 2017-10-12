@@ -2,6 +2,7 @@
 title: tcc源码解析系列(二)之环境搭建
 date: 2017-10-11 16:03:53
 categories: happylifeplat-tcc
+permalink: TCC/tcc-two
 ---
 
 ### 环境搭建教程

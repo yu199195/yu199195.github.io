@@ -2,6 +2,7 @@
 title: tcc源码解析系列(一)之项目结构
 date: 2017-10-11 15:03:53
 categories: happylifeplat-tcc
+permalink: TCC/tcc-one
 ---
 
 ### [happylifeplat-tcc](https://github.com/yu199195/happylifeplat-tcc) 是什么？有什么功能？
