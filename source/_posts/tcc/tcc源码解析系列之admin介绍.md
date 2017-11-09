@@ -1,7 +1,7 @@
 ---
-title:TCC分布式事务框架源码解析系列之tcc-admin 事务管理后台
-date: 2017-10-14 11:03:53
-categories: happylifeplat-transaction
+title: tcc源码解析系列之tcc-admin事务管理后台
+date: 2017-10-12 19:04:53
+categories: happylifeplat-tcc
 permalink: tcc/tcc-seven
 ---
 
@@ -104,9 +104,9 @@ compensation.zookeeper.sessionTimeOut=200000
 ### 步揍四:在浏览器访问  http://ip:prot/tcc-admin/index.html  ,输入用户名，密码登录。
 
 
-![登录界面](https://yu199195.github.io/images/happylifeplat-transaction/txlogin.png)
+![登录界面](https://yu199195.github.io/images/happylifeplat-tcc/tccLogin.png)
 
-
+![事务补偿](https://yu199195.github.io/images/happylifeplat-tcc/tccCompensation.png)
 
 
 

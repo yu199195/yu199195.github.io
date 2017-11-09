@@ -29,3 +29,6 @@ permalink: TCC/tcc-one
 * **happylifeplat-tcc-dashboard** 该项目是分布式事务管理后台的前端源码，采用vue.js + element UI 实现
 
 * **happylifeplat-tcc-admin** 该项目是分布式事务的跟踪管理后台（调用链跟踪，控制补偿事务等功能）
+![登录界面](https://yu199195.github.io/images/happylifeplat-tcc/tccLogin.png)
+
+![事务补偿](https://yu199195.github.io/images/happylifeplat-tcc/tccCompensation.png)
