@@ -12,7 +12,7 @@ permalink: TCC/tcc-one
   * 序列化方式，支持java，hessian，kryo，protostuff。
 
 ###  项目结构
-![结构图](https://yu199195.github.io/images/hmily-tcc/01.png)
+![结构图](https://yu199195.github.io/images/hmily-tcc/012.png)
 
 *  **hmily-annotation** 提供分布式事务的@Tcc注解,对于向dubbo这种面向接口的rpc框架，为了保证接口的轻量性，所以抽离出来，单独做为一个项目。
 
