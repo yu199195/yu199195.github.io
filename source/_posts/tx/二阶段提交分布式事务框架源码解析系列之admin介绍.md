@@ -1,20 +1,20 @@
 ---
 title: 二阶段提交分布式事务框架源码解析系列之transaction-admin 事务跟踪查看管理后台
 date: 2017-10-14 11:03:53
-categories: happylifeplat-transaction
+categories: Raincat
 permalink: tx/tx-seven
 ---
 
 ### transaction-admin 启动教程
 启动前提：分布式事务项目已经部署并且运行起来，用户根据自己的RPC框架进行使用
-[dubbo 用户](https://github.com/yu199195/happylifeplat-transaction/wiki/dubbo%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
-[springcloud 用户](https://github.com/yu199195/happylifeplat-transaction/wiki/springcloud%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
+[dubbo 用户](https://github.com/yu199195/Raincat/wiki/dubbo%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
+[springcloud 用户](https://github.com/yu199195/Raincat/wiki/springcloud%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
 
 
 * 首先用户使用的JDK必须是1.8+  本地安装了git ,maven ，执行以下命令
 
 ```
-git clone https://github.com/yu199195/happylifeplat-transaction.git
+git clone https://github.com/yu199195/Raincat.git
 
 maven clean install
 ```
@@ -121,14 +121,14 @@ recover.zookeeper.sessionTimeOut=200000
 ### 步揍四:在浏览器访问  http://ip:prot/admin  ,输入用户名，密码登录。
 
 
-![登录界面](https://yu199195.github.io/images/happylifeplat-transaction/txlogin.png)
+![登录界面](https://yu199195.github.io/images/Raincat/txlogin.png)
 
 
-![首页](https://yu199195.github.io/images/happylifeplat-transaction/txIndex.png)
+![首页](https://yu199195.github.io/images/Raincat/txIndex.png)
 
-![事务组](https://yu199195.github.io/images/happylifeplat-transaction/txGroupInfo.png)
+![事务组](https://yu199195.github.io/images/Raincat/txGroupInfo.png)
 
-![事务补偿](https://yu199195.github.io/images/happylifeplat-transaction/txRecoverInfo.png)
+![事务补偿](https://yu199195.github.io/images/Raincat/txRecoverInfo.png)
 
 
 

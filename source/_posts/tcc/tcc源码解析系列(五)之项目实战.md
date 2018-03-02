@@ -1,7 +1,7 @@
 ---
 title: tcc源码解析系列(五)之项目实战
 date: 2017-10-12 19:03:53
-categories: happylifeplat-tcc
+categories: hmily-tcc
 permalink: TCC/tcc-five
 ---
 

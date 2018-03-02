@@ -1,7 +1,7 @@
 ---
 title: tcc源码解析系列(三)之启动详解
 date: 2017-10-12 17:03:53
-categories: happylifeplat-tcc
+categories: hmily-tcc
 permalink: TCC/tcc-three
 ---
 
@@ -16,9 +16,9 @@ permalink: TCC/tcc-three
 <!-- Aspect 切面配置，是否开启AOP切面-->
   <aop:aspectj-autoproxy expose-proxy="true"/>
   <!--扫描框架的包-->
-  <context:component-scan base-package="com.happylifeplat.tcc.*"/>
+  <context:component-scan base-package="com.hmily.tcc.*"/>
   <!--启动类属性配置-->
-  <bean id="tccTransactionBootstrap" class="com.happylifeplat.tcc.core.bootstrap.TccTransactionBootstrap">
+  <bean id="tccTransactionBootstrap" class="com.hmily.tcc.core.bootstrap.TccTransactionBootstrap">
          <property name="serializer" value="kryo"/>
          <property name="coordinatorQueueMax" value="5000"/>
          <property name="coordinatorThreadMax" value="4"/>
@@ -30,7 +30,7 @@ permalink: TCC/tcc-three
          <property name="scheduledThreadMax" value="4"/>
          <property name="repositorySupport" value="db"/>
          <property name="tccDbConfig">
-             <bean class="com.happylifeplat.tcc.common.config.TccDbConfig">
+             <bean class="com.hmily.tcc.common.config.TccDbConfig">
                  <property name="url"
                            value="jdbc:mysql://192.168.1.68:3306/account?useUnicode=true&amp;characterEncoding=utf8"/>
                  <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
@@ -44,11 +44,11 @@ permalink: TCC/tcc-three
 
 ### TccTransactionBootstrap 源码解析
 ```java
-package com.happylifeplat.tcc.core.bootstrap;
+package com.hmily.tcc.core.bootstrap;
 
-import com.happylifeplat.tcc.common.config.TccConfig;
-import com.happylifeplat.tcc.core.helper.SpringBeanUtils;
-import com.happylifeplat.tcc.core.service.TccInitService;
+import com.hmily.tcc.common.config.TccConfig;
+import com.hmily.tcc.core.helper.SpringBeanUtils;
+import com.hmily.tcc.core.service.TccInitService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -119,7 +119,7 @@ public void initialization(TccConfig tccConfig) {
   }
 ```
 *  **coordinatorRepository.init(appName, tccConfig)** 就是根据spi思想来具体初始化，现在支持的如图：
-  ![](https://yu199195.github.io/images/happylifeplat-tcc/06.png)
+  ![](https://yu199195.github.io/images/hmily-tcc/06.png)
 
 *   **initCoordinatorPool()** 初始化 协调资源线程池
 ```java

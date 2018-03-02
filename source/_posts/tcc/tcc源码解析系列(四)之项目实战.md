@@ -1,11 +1,11 @@
 ---
 title: tcc源码解析系列(四)之项目实战
 date: 2017-10-12 18:03:53
-categories: happylifeplat-tcc
+categories: hmily-tcc
 permalink: TCC/tcc-four
 ---
 
-#### 通过之前的几篇文章我相信您已经搭建好了运行环境，本次的项目实战是依照[happylifeplat-tcc-demo](https://github.com/yu199195/happylifeplat-tcc/tree/master/happylifeplat-tcc-demo)项目来演练，也是非常经典的分布式事务场景：支付成功，进行订单状态的更新，扣除用户账户，库存扣减这几个模块来进行tcc分布式事务。话不多说，让我们一起进入体验吧！
+#### 通过之前的几篇文章我相信您已经搭建好了运行环境，本次的项目实战是依照[hmily-tcc-demo](https://github.com/yu199195/hmily/tree/master/hmily-tcc-demo)项目来演练，也是非常经典的分布式事务场景：支付成功，进行订单状态的更新，扣除用户账户，库存扣减这几个模块来进行tcc分布式事务。话不多说，让我们一起进入体验吧！
 
 
 * 首先我们找到 **PaymentServiceImpl.makePayment** 方法，这是tcc分布式事务的发起者
@@ -51,7 +51,7 @@ permalink: TCC/tcc-four
 
 ### @Tcc注解切面
 
-* 我们找到在[happylifeplat-tcc-core](https://github.com/yu199195/happylifeplat-tcc/tree/master/happylifeplat-tcc-core)包中找到
+* 我们找到在[hmily-tcc-core](https://github.com/yu199195/hmily/tree/master/hmily-tcc-core)包中找到
  **TccTransactionAspect**，这里定义@Tcc的切点。
 
 ```java
@@ -64,7 +64,7 @@ public abstract class TccTransactionAspect {
         this.tccTransactionInterceptor = tccTransactionInterceptor;
     }
 
-    @Pointcut("@annotation(com.happylifeplat.tcc.annotation.Tcc)")
+    @Pointcut("@annotation(com.hmily.tcc.annotation.Tcc)")
     public void txTransactionInterceptor() {
 
     }
@@ -107,12 +107,12 @@ public class DubboTccTransactionAspect extends TccTransactionAspect implements O
 ``` java
 @Aspect
 @Component
-public class SpringCloudTxTransactionAspect extends TccTransactionAspect implements Ordered {
+public class SpringCloudTccTransactionAspect extends TccTransactionAspect implements Ordered {
 
 
     @Autowired
-    public SpringCloudTxTransactionAspect(SpringCloudTxTransactionInterceptor  springCloudTxTransactionInterceptor) {
-        this.setTccTransactionInterceptor(springCloudTxTransactionInterceptor);
+    public SpringCloudTxTransactionAspect(SpringCloudTccTransactionAspect  springCloudTccTransactionAspect) {
+        this.setTccTransactionInterceptor(springCloudTccTransactionAspect);
     }
 
 
@@ -145,7 +145,7 @@ public class TccCoordinatorMethodAspect implements Ordered {
     }
 
 
-    @Pointcut("@annotation(com.happylifeplat.tcc.annotation.Tcc)")
+    @Pointcut("@annotation(com.hmily.tcc.annotation.Tcc)")
     public void coordinatorMethod() {
 
     }

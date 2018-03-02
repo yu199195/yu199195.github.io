@@ -1,20 +1,20 @@
 ---
 title: tcc源码解析系列之tcc-admin事务管理后台
 date: 2017-10-13 19:04:53
-categories: happylifeplat-tcc
+categories: hmily-tcc
 permalink: tcc/tcc-seven
 ---
 
 ### Tcc-admin 启动教程
 启动前提：分布式事务项目已经部署并且运行起来，用户根据自己的RPC框架进行使用
-[dubbo 用户](https://github.com/yu199195/happylifeplat-tcc/wiki/dubbo%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
- [springcloud 用户](https://github.com/yu199195/happylifeplat-tcc/wiki/springcloud%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
+[dubbo 用户](https://github.com/yu199195/hmily/wiki/dubbo%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
+ [springcloud 用户](https://github.com/yu199195/hmily/wiki/springcloud%E7%94%A8%E6%88%B7%E6%8C%87%E5%8D%97)
 
 
 * 首先用户使用的JDK必须是1.8+  本地安装了git ,maven ，执行以下命令
 
 ```
-git clone https://github.com/yu199195/happylifeplat-tcc.git
+git clone https://github.com/yu199195/hmily.git
 
 maven clean install
 ```
@@ -104,9 +104,9 @@ compensation.zookeeper.sessionTimeOut=200000
 ### 步揍四:在浏览器访问  http://ip:prot/tcc-admin/index.html  ,输入用户名，密码登录。
 
 
-![登录界面](https://yu199195.github.io/images/happylifeplat-tcc/tccLogin.png)
+![登录界面](https://yu199195.github.io/images/hmily-tcc/tccLogin.png)
 
-![事务补偿](https://yu199195.github.io/images/happylifeplat-tcc/tccCompensation.png)
+![事务补偿](https://yu199195.github.io/images/hmily-tcc/tccCompensation.png)
 
 
 
